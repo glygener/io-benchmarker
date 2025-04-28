@@ -32,7 +32,7 @@ fi
 get_config() {
   local key="$1"
   local default="$2"
-  local value=$(jq -r ".$key // \"\" "$CONFIG_FILE"")
+  local value=$(jq -r ".$key // \"\"" "$CONFIG_FILE")
 
   if [ -z "$value" ] || [ "$value" = "null" ]; then
     echo "$default"
