@@ -1,0 +1,13 @@
+{
+  "test_dir": "~/io_benchmark/",
+  "file_size": 1024,
+  "block_size": "4k",
+  "num_files": 5,
+  "log_file": "~/io_benchmark/io_benchmark.log",
+  "keep_files": false,
+  "run_sequential": true,
+  "run_random": true,
+  "run_fsyncs": true,
+  "run_metadata": true,
+  "date_format": "+%Y-%m-%d %H:%M:%S"
+}
