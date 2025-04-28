@@ -42,11 +42,11 @@ get_config() {
 }
 
 # Load configuration
-TEST_DIR=$(get_config "test_dir" "/tmp/io_benchmark")
+TEST_DIR=$(get_config "test_dir" "~/io_benchmark/")
 FILE_SIZE=$(get_config "file_size" "1024")
 BLOCK_SIZE=$(get_config "block_size" "4k")
 NUM_FILES=$(get_config "num_files" "5")
-LOG_FILE=$(get_config "log_file" "/var/log/io_benchmark.log")
+LOG_FILE=$(get_config "log_file" "~/io_benchmark/io_benchmark.log")
 KEEP_FILES=$(get_config "keep_files" "false")
 RUN_SEQUENTIAL=$(get_config "run_sequential" "true")
 RUN_RANDOM=$(get_config "run_random" "true")
