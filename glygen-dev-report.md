@@ -16,13 +16,13 @@ Started on Monday May 5 at 07:42:25 EDT 2025
 ## Overall Assessment
 
 Benchmarks reveal performance issues with the storage system:
-- Poor write performance (362 kB/s compared to biomarker's 378 KB/s sequential, _____ random)
+- Extremely poor write performance (362 KB/s sequential, 2.54 MiB/s random)
   - Somewhat strange that random writes perform better than sequential writes
-- Write performance is 90+ times slower than reads
-- Better (relatively compared to write), but still poor read performance (35.5 MB/s sequential, 6.5 MB/s random)
-- Very high latency, especially for wrties (42ms average)
+- Write performance is 67 times slower than reads
+- Better (relatively compared to write), but still poor read performance (24.3 MB/s sequential, 5.99 MB/s random)
+- Very high latency, especially for writes (46.2ms average)
 - Poor metadata performance
-- Particularly poor performance with fsync operations (only 94 IOPS)
+- Particularly poor performance with fsync operations (only 91 IOPS)
 
 **Root Cause Analysis**:
 - The VM NFS mount is experiencing significant bottlenecks, could be due to:
@@ -41,8 +41,8 @@ Benchmarks reveal performance issues with the storage system:
 - `NUM_FILES`: 5
 - `LOG_FILE`: /home/maria.kim/io-benchmarker/io_benchmarker.log
 - `Hostname`: glygen-vm-dev
-- `Kernel`: 4.18.0-553.34.1.el8_10.x86_64
-- `CPU`: Intel(R) Xeon(R) Gold 5218R CPU @ 2.10GHz
+- `Kernel`: 3.10.0-1160.99.1.el7.x86_64
+- `CPU`: Intel Core Processor (Broadwell)
 - `Memory`: 31Gi
 
 ### VM Config
@@ -50,7 +50,7 @@ Benchmarks reveal performance issues with the storage system:
 **Filesystem**:
 | Filesystem | Size | Used | Avail | Use% | Mounted on |
 |-|-|-|-|-|-|
-| 10.10.0.3:/tank1/biomarkerkb/data/shared | 990G |  143G | 848G | 15% | /data/shared |
+| glygen-nfs:/tank1/data/shared | 6.4T | 4.9T | 1.6T | 77% | /data/shared
 
 ## Benchmarking
 
