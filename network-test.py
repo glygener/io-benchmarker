@@ -19,7 +19,7 @@ def get_pagination_obj():
             {"table_id":"glycosylation_reported_with_glycan","offset":1,"limit":20,"sort":"start_pos","order":"asc"},
             {"table_id":"glycosylation_reported","offset":1,"limit":20,"sort":"start_pos","order":"asc"},
             {"table_id":"glycosylation_predicted","offset":1,"limit":20,"sort":"start_pos","order":"asc"},
-          {"table_id":"glycosylation_automatic_literature_mining","offset":1,"limit":20,"sort":"start_pos","order":"asc"},
+            {"table_id":"glycosylation_automatic_literature_mining","offset":1,"limit":20,"sort":"start_pos","order":"asc"},
             {"table_id":"phosphorylation","offset":1,"limit":20,"sort":"start_pos","order":"asc"},
             {"table_id":"snv_disease","offset":1,"limit":20,"sort":"start_pos","order":"asc"},
             {"table_id":"snv_non_disease","offset":1,"limit":20,"sort":"start_pos","order":"asc"},
